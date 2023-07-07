@@ -94,7 +94,7 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 	picture := claims["picture"].(string)
 
 	// Signed in, display user info and logout button
-	w.Header().Set("Content-Type", "text/html")
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	fmt.Fprintf(w, `<img src="%s"/><br/>Hello, %s!<br/><a href="/logout">Logout</a>`, picture, name)
 }
 func handleLogin(w http.ResponseWriter, r *http.Request) {
